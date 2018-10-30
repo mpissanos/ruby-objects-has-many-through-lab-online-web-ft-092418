@@ -1,9 +1,12 @@
 class Artist 
-  attr_reader :name, :genre
+  
+  attr_accessor :name, :genre
   @@all = []
+  
+  
   def initialize(name)
     @name = name
-    @@all<< self
+    @@all << self
   end
   
   def self.all
@@ -11,18 +14,18 @@ class Artist
   end
   
   def songs
-    
+    Song.all.select { |song| song.artist == self }
   end
   
   def genres
-    
+    songs.map do |song|
+      song.genre
+    end
   end
   
   def new_song(name, genre)
-    name = self.new
-    genre = Genre.new
-    
-    
+    Song.new(name, self, genre)
   end
     
 end
+  
