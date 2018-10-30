@@ -18,6 +18,6 @@ class Doctor
   end
   
   def appointments
-    Song.all { |song| song.genre == self }
+    Appointment.all { |app| app.doctor == self }
   end
 end
