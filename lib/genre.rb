@@ -10,7 +10,7 @@ class Genre
   end
   
   def songs
-    songs.all.select do |genre|
+    Song.all.select do |genre|
       
   end
   
