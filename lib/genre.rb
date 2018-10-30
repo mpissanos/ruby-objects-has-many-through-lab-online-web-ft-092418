@@ -19,4 +19,8 @@ class Genre
     @@all
   end
   
+  def artists
+    self.all.collect do |artists|
+      
+  
 end
