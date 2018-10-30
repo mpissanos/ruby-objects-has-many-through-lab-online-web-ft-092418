@@ -20,7 +20,10 @@ class Genre
   end
   
   def artists
-    self.all.collect do |artists|
-      
+    Genre.all.collect do |artists|
+      artists.self
+    end
+    
+  end
   
 end
